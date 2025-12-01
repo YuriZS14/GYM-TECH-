@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>GT - IMC & TMB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./GT.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+ <link rel="icon" href="favicon.png" type="image/png">
+
+</head>
+<body>
+
+<nav>
+  <div class="logo">GYMTEC</div>
+  <ul>
+    <li><a href="Inicio.html">INÍCIO</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <!-- CARD 1: IMC -->
+  <div class="card active" id="cardIMC" aria-live="polite">
+    <h1>Calculo do seu IMC</h1>
+
+    <form id="formIMC" onsubmit="return false">
+      <div class="form-grid">
+        <div class="form-group"><label for="peso">Peso (Kg)</label><input type="number" id="peso" step="0.1" min="20" max="300" required></div>
+        <div class="form-group"><label for="altura">Altura (cm)</label><input type="number" id="altura" step="1" min="100" max="250" required></div>
+        <div class="form-group"><label for="idade">Idade</label><input type="number" id="idade" min="10" max="120" required></div>
+        <div class="form-group"><label for="sexo">Sexo</label>
+          <select id="sexo" required>
+            <option value="">Selecione</option>
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="btn-next" id="btnSeguirIMC">Seguir</button>
+      </div>
+    </form>
+
+    <div class="resultado" id="resultadoIMC" aria-live="polite"></div>
+  </div>
+
+  <!-- CARD 2: TMB -->
+  <div class="card" id="cardTMB" aria-live="polite">
+    <h1>Calcule seu TMB</h1>
+
+    <form id="formTMB" onsubmit="return false">
+      <div class="form-grid">
+        <div class="form-group"><label for="pesoTMB">Peso (Kg)</label><input type="number" id="pesoTMB" step="0.1" min="20" max="300" required></div>
+        <div class="form-group"><label for="alturaTMB">Altura (cm)</label><input type="number" id="alturaTMB" step="1" min="100" max="250" required></div>
+        <div class="form-group"><label for="idadeTMB">Idade</label><input type="number" id="idadeTMB" min="10" max="120" required></div>
+        <div class="form-group"><label for="sexoTMB">Sexo</label>
+          <select id="sexoTMB" required>
+            <option value="">Selecione</option>
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </div>
+
+        <!-- atividade e objetivo go here (full-width) -->
+        <div class="form-group full-width">
+          <label for="atividade">Nível de atividade física</label>
+          <select id="atividade" required>
+            <option value="">Selecione</option>
+            <option value="1.2">Sedentário (Pouco ou nenhum exercício)</option>
+            <option value="1.375">Leve (Exercício leve 1-3 dias/semana)</option>
+            <option value="1.55">Moderado (Exercício 3-5 dias/semana)</option>
+            <option value="1.725">Ativo (Exercício 6 dias/semana)</option>
+            <option value="1.9">Muito ativo (Atleta/trabalho físico intenso)</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="objetivoTMB">Objetivo</label>
+          <select id="objetivoTMB" required>
+            <option value="">Selecione</option>
+            <option value="manter">Manter o peso</option>
+            <option value="perder">Perder peso</option>
+            <option value="ganhar">Ganhar massa</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="btn-next" id="btnSeguirTMB">Seguir</button>
+      </div>
+    </form>
+
+    <div class="resultado-tmb" id="resultadoTMB" aria-live="polite"></div>
+  </div>
+
+  <!-- CARD 3: FINAL (3 boxes) -->
+  <div class="card" id="cardFinal" aria-live="polite">
+    <h1>Resultados</h1>
+
+    <div class="final-wrapper">
+      <div class="final-grid">
+        <div class="final-box" id="boxIMC">
+          <h2 id="titleIMC">Calculo do seu IMC</h2>
+          <div id="textoIMC">
+            <!-- texto dinâmico do IMC vai aqui -->
+          </div>
+        </div>
+
+        <div class="final-box" id="boxTMB">
+          <h2>Resultados</h2>
+          <div id="valorTMB">
+            <!-- texto dinâmico do TMB vai aqui -->
+          </div>
+        </div>
+
+        <div class="final-box" id="boxOBJ">
+          <h2>Objetivo do seu TMB</h2>
+          <div id="textoObjetivo">
+            <!-- texto dinâmico do objetivo vai aqui -->
+          </div>
+        </div>
+      </div>
+
+      <div class="final-actions">
+        <button class="btn-finalizar" id="btnFinalizar">Finalizar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+ 
+  <script src="./GT.js"></script>
+
+</body>
+</html>
